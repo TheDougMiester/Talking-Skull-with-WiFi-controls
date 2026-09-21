@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32449042/README.md)
 # ESP32-S3 Talking Skull with FFT Jaw and Animated Demon Eyes
 
 A build and operating manual for a Wi-Fi-controlled Halloween talking skull using:

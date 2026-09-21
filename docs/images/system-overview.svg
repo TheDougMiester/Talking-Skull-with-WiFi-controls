@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<style>.bg{fill:#101319}.b{fill:#1c2433;stroke:#62708a;stroke-width:2}.t{fill:#fff;font:700 20px system-ui}.s{fill:#c7d2e6;font:15px system-ui}.a{fill:none;stroke:#66d9ef;stroke-width:4;marker-end:url(#m)}.g{fill:none;stroke:#7ee787;stroke-width:4;marker-end:url(#n)}.r{fill:none;stroke:#ff6677;stroke-width:4;marker-end:url(#o)}</style>
+<defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#66d9ef"/></marker><marker id="n" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#7ee787"/></marker><marker id="o" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#ff6677"/></marker></defs>
+<rect class="bg" width="1200" height="650"/><text x="600" y="42" text-anchor="middle" class="t">Talking Skull Signal Architecture</text>
+<rect x="40" y="90" width="210" height="100" rx="15" class="b"/><text x="145" y="125" text-anchor="middle" class="t">Stereo WAV</text><text x="145" y="153" text-anchor="middle" class="s">LEFT: isolated voice</text><text x="145" y="177" text-anchor="middle" class="s">RIGHT: music/effects</text>
+<rect x="340" y="75" width="250" height="130" rx="15" class="b"/><text x="465" y="112" text-anchor="middle" class="t">ESP32-S3 N16R8</text><text x="465" y="141" text-anchor="middle" class="s">SD/LittleFS playback</text><text x="465" y="166" text-anchor="middle" class="s">Web UI + FFT + animation</text><text x="465" y="190" text-anchor="middle" class="s">Two cores + PSRAM</text>
+<path d="M250 140H340" class="a"/>
+<rect x="690" y="65" width="220" height="105" rx="15" class="b"/><text x="800" y="101" text-anchor="middle" class="t">MAX98357A</text><text x="800" y="130" text-anchor="middle" class="s">(L + R) / 2 mono</text><text x="800" y="154" text-anchor="middle" class="s">2.0× max digital gain</text>
+<rect x="990" y="75" width="170" height="85" rx="15" class="b"/><text x="1075" y="111" text-anchor="middle" class="t">Speaker</text><text x="1075" y="139" text-anchor="middle" class="s">4Ω or 8Ω</text>
+<path d="M590 120H690" class="a"/><path d="M910 118H990" class="a"/>
+<rect x="330" y="275" width="270" height="120" rx="15" class="b"/><text x="465" y="310" text-anchor="middle" class="t">Voice FFT / Envelope</text><text x="465" y="340" text-anchor="middle" class="s">300–1000 Hz opens</text><text x="465" y="365" text-anchor="middle" class="s">2500–6000 Hz suppresses</text><text x="465" y="389" text-anchor="middle" class="s">jawFactor 0.0…1.0</text>
+<path d="M465 205V275" class="r"/>
+<rect x="710" y="270" width="210" height="130" rx="15" class="b"/><text x="815" y="305" text-anchor="middle" class="t">HS-65MG Jaw</text><text x="815" y="334" text-anchor="middle" class="s">GPIO21 • 50 Hz</text><text x="815" y="359" text-anchor="middle" class="s">1505 µs open</text><text x="815" y="384" text-anchor="middle" class="s">1774 µs closed</text>
+<path d="M600 335H710" class="r"/>
+<rect x="240" y="475" width="250" height="110" rx="15" class="b"/><text x="365" y="510" text-anchor="middle" class="t">Left GC9A01</text><text x="365" y="540" text-anchor="middle" class="s">SPI2 • 240×240</text><text x="365" y="566" text-anchor="middle" class="s">PSRAM sprite + worker</text>
+<rect x="710" y="475" width="250" height="110" rx="15" class="b"/><text x="835" y="510" text-anchor="middle" class="t">Right GC9A01</text><text x="835" y="540" text-anchor="middle" class="s">SPI3 • 240×240</text><text x="835" y="566" text-anchor="middle" class="s">PSRAM sprite + worker</text>
+<path d="M410 205L365 475" class="g"/><path d="M520 205L835 475" class="g"/>
+<text x="600" y="625" text-anchor="middle" class="s">Web controls select tracks, volume, live microphone, eye position, eyelids, and GREEN / BLUE / RED iris palettes.</text>
+</svg>

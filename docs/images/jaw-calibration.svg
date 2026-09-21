@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330">
+<style>.bg{fill:#101319}.t{fill:#fff;font:700 23px system-ui}.s{fill:#c7d2e6;font:16px system-ui}.v{fill:#ffd166;font:700 18px system-ui}.bar{fill:url(#g);stroke:#fff;stroke-width:2}.tick{stroke:#fff;stroke-width:2}</style><defs><linearGradient id="g"><stop stop-color="#40c4ff"/><stop offset="1" stop-color="#ff5252"/></linearGradient></defs>
+<rect class="bg" width="1200" height="330"/><text x="600" y="42" text-anchor="middle" class="t">Reversed HS-65MG Jaw Mapping</text>
+<rect x="110" y="125" width="980" height="42" rx="20" class="bar"/><line x1="110" y1="105" x2="110" y2="190" class="tick"/><line x1="1090" y1="105" x2="1090" y2="190" class="tick"/><line x1="600" y1="118" x2="600" y2="177" class="tick"/>
+<text x="110" y="95" text-anchor="middle" class="v">1505 µs</text><text x="110" y="220" text-anchor="middle" class="t">FULL OPEN</text><text x="110" y="249" text-anchor="middle" class="s">jawFactor = 1.0</text>
+<text x="1090" y="95" text-anchor="middle" class="v">1774 µs</text><text x="1090" y="220" text-anchor="middle" class="t">FULL CLOSED</text><text x="1090" y="249" text-anchor="middle" class="s">jawFactor = 0.0</text>
+<text x="600" y="205" text-anchor="middle" class="s">Approx. midpoint: 1640 µs</text><text x="600" y="290" text-anchor="middle" class="v">Larger pulse = more closed • Smaller pulse = more open • Never exceed confirmed endpoints</text>
+</svg>

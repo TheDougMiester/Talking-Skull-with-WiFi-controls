@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1050" viewBox="0 0 1500 1050">
+<defs>
+  <style>
+    .bg{fill:#101319}.panel{fill:#1b2230;stroke:#62708a;stroke-width:2}.power{fill:none;stroke:#ff5252;stroke-width:7}.raw{fill:none;stroke:#ffb74d;stroke-width:7}.gnd{fill:none;stroke:#67c7ff;stroke-width:6}.sig{fill:none;stroke:#7ee787;stroke-width:3;stroke-dasharray:9 7}.spk{fill:none;stroke:#d58cff;stroke-width:4}.title{font:700 32px system-ui,sans-serif;fill:#fff}.h{font:700 21px system-ui,sans-serif;fill:#fff}.t{font:16px system-ui,sans-serif;fill:#dce5f5}.s{font:14px system-ui,sans-serif;fill:#aebbd0}.warn{font:700 15px system-ui,sans-serif;fill:#ffd166}.cap{fill:#293246;stroke:#ffdf70;stroke-width:2}.dot{fill:#67c7ff}.arrow{fill:#ff5252}.rawarrow{fill:#ffb74d}
+  </style>
+  <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="arrow"/></marker>
+  <marker id="ao" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="rawarrow"/></marker>
+</defs>
+<rect class="bg" width="1500" height="1050"/>
+<text x="750" y="48" text-anchor="middle" class="title">Talking Skull — Recommended Three-Rail Power Wiring</text>
+<text x="750" y="76" text-anchor="middle" class="s">3S protected Li-ion pack • independent servo rail • external eye rail • common star ground</text>
+
+<!-- Battery and protection -->
+<rect x="50" y="120" width="230" height="135" rx="18" class="panel"/>
+<text x="165" y="155" text-anchor="middle" class="h">3S Li-ion Battery</text>
+<text x="165" y="184" text-anchor="middle" class="t">12.6 V full / 11.1 V nominal</text>
+<text x="165" y="210" text-anchor="middle" class="t">Integrated BMS, ≥5 A</text>
+<text x="165" y="235" text-anchor="middle" class="warn">Use a proper 3S balance charger</text>
+<rect x="330" y="145" width="125" height="55" rx="10" class="panel"/>
+<text x="392" y="178" text-anchor="middle" class="h">3 A Fuse</text>
+<rect x="500" y="145" width="135" height="55" rx="10" class="panel"/>
+<text x="568" y="178" text-anchor="middle" class="h">Main Switch</text>
+<path d="M280 165 H330" class="raw" marker-end="url(#ao)"/>
+<path d="M455 172 H500" class="raw" marker-end="url(#ao)"/>
+<path d="M635 172 H710" class="raw"/>
+<circle cx="710" cy="172" r="10" fill="#ffb74d"/>
+<text x="700" y="135" text-anchor="middle" class="warn">RAW BATTERY BUS: 9–12.6 V</text>
+
+<!-- Three converters -->
+<rect x="770" y="105" width="305" height="140" rx="18" class="panel"/>
+<text x="922" y="140" text-anchor="middle" class="h">5 V / 8 A Buck</text>
+<text x="922" y="169" text-anchor="middle" class="t">New 30 × 20 mm module</text>
+<text x="922" y="196" text-anchor="middle" class="t">ESP32 + MAX98357A only</text>
+<text x="922" y="221" text-anchor="middle" class="s">Load-test at 2–3 A before installation</text>
+<rect x="770" y="290" width="305" height="130" rx="18" class="panel"/>
+<text x="922" y="325" text-anchor="middle" class="h">5 V Mini Buck</text>
+<text x="922" y="354" text-anchor="middle" class="t">Dedicated HS-65MG servo rail</text>
+<text x="922" y="382" text-anchor="middle" class="s">Keep motor pulses off electronics rail</text>
+<rect x="770" y="465" width="305" height="130" rx="18" class="panel"/>
+<text x="922" y="500" text-anchor="middle" class="h">3.3 V Mini Buck</text>
+<text x="922" y="529" text-anchor="middle" class="t">Dedicated GC9A01 eye rail</text>
+<text x="922" y="557" text-anchor="middle" class="s">Do not use ESP32 3.3 V pin for VCC</text>
+<path d="M710 172 H740 V175 H770" class="raw" marker-end="url(#ao)"/>
+<path d="M710 172 H740 V355 H770" class="raw" marker-end="url(#ao)"/>
+<path d="M710 172 H720 V530 H770" class="raw" marker-end="url(#ao)"/>
+
+<!-- Loads right -->
+<rect x="1160" y="90" width="290" height="175" rx="18" class="panel"/>
+<text x="1305" y="125" text-anchor="middle" class="h">ESP32-S3 Board</text>
+<text x="1305" y="154" text-anchor="middle" class="t">5 V buck → 5V/VIN</text>
+<text x="1305" y="181" text-anchor="middle" class="t">Wi-Fi • PSRAM • SD • FFT</text>
+<text x="1305" y="210" text-anchor="middle" class="s">470–1000 µF near 5 V input</text>
+<text x="1305" y="237" text-anchor="middle" class="warn">Never feed 5 V into the 3.3 V pin</text>
+<rect x="1160" y="300" width="290" height="145" rx="18" class="panel"/>
+<text x="1305" y="335" text-anchor="middle" class="h">MAX98357A + Speaker</text>
+<text x="1305" y="364" text-anchor="middle" class="t">5 V buck → VCC</text>
+<text x="1305" y="391" text-anchor="middle" class="s">470–1000 µF close to amplifier</text>
+<text x="1305" y="418" text-anchor="middle" class="warn">Speaker connects SPK+ to SPK− only</text>
+<rect x="1160" y="485" width="290" height="130" rx="18" class="panel"/>
+<text x="1305" y="520" text-anchor="middle" class="h">HS-65MG Jaw Servo</text>
+<text x="1305" y="550" text-anchor="middle" class="t">Dedicated 5 V buck → red wire</text>
+<text x="1305" y="579" text-anchor="middle" class="s">1000–2200 µF at servo connector</text>
+<rect x="1160" y="655" width="290" height="145" rx="18" class="panel"/>
+<text x="1305" y="690" text-anchor="middle" class="h">Two GC9A01 Eyes</text>
+<text x="1305" y="719" text-anchor="middle" class="t">External 3.3 V buck → both VCC</text>
+<text x="1305" y="746" text-anchor="middle" class="s">220–470 µF on eye rail</text>
+<text x="1305" y="773" text-anchor="middle" class="warn">SPI remains 3.3 V logic from ESP32</text>
+
+<!-- Power outputs -->
+<path d="M1075 145 H1120 V145 H1160" class="power" marker-end="url(#ar)"/>
+<path d="M1075 205 H1110 V372 H1160" class="power" marker-end="url(#ar)"/>
+<path d="M1075 355 H1125 V550 H1160" class="power" marker-end="url(#ar)"/>
+<path d="M1075 530 H1100 V727 H1160" class="power" marker-end="url(#ar)"/>
+<text x="1090" y="125" class="warn">5 V</text>
+<text x="1086" y="342" class="warn">5 V</text>
+<text x="1080" y="516" class="warn">3.3 V</text>
+
+<!-- Signal lines from ESP -->
+<path d="M1290 265 V285 H1140 V372 H1160" class="sig"/>
+<text x="1110" y="284" text-anchor="end" class="s">I²S: DIN GPIO2 • BCLK42 • LRC41 • SD GPIO1</text>
+<path d="M1345 265 V470 H1140 V550 H1160" class="sig"/>
+<text x="1135" y="475" text-anchor="end" class="s">PWM GPIO21</text>
+<path d="M1400 265 V635 H1130 V727 H1160" class="sig"/>
+<text x="1125" y="635" text-anchor="end" class="s">SPI2 left + SPI3 right</text>
+
+<!-- Ground star -->
+<circle cx="690" cy="870" r="20" class="dot"/>
+<text x="690" y="912" text-anchor="middle" class="h">STAR GROUND</text>
+<text x="690" y="938" text-anchor="middle" class="s">Join returns here — not through the ESP32 PCB</text>
+<path d="M165 255 V870 H670" class="gnd"/>
+<path d="M922 245 V840 H690" class="gnd"/>
+<path d="M922 420 V825 H690" class="gnd"/>
+<path d="M922 595 V810 H690" class="gnd"/>
+<path d="M1305 265 V855 H710" class="gnd"/>
+<path d="M1305 445 V840 H710" class="gnd"/>
+<path d="M1305 615 V825 H710" class="gnd"/>
+<path d="M1305 800 V810 H710" class="gnd"/>
+
+<!-- Legend -->
+<rect x="50" y="965" width="1400" height="62" rx="14" class="panel"/>
+<line x1="85" y1="990" x2="150" y2="990" class="raw"/><text x="165" y="996" class="t">Raw battery</text>
+<line x1="330" y1="990" x2="395" y2="990" class="power"/><text x="410" y="996" class="t">Regulated power</text>
+<line x1="600" y1="990" x2="665" y2="990" class="gnd"/><text x="680" y="996" class="t">Ground return</text>
+<line x1="875" y1="990" x2="940" y2="990" class="sig"/><text x="955" y="996" class="t">Logic/signal</text>
+<text x="1420" y="996" text-anchor="end" class="warn">Verify each output with a meter before connecting loads.</text>
+</svg>
